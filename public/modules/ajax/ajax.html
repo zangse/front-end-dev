@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>原生ajax请求</title>
+    <script type="text/javascript" src="../../utils/util.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var params = {
+        url: 'http://localhost:3000/api/ajax',
+        type: 'GET',
+        data: {},
+        success: function(res) {
+            console.log(res)
+        },
+        error: function(error) {
+            console.log(error)
+        }
+    };
+    util.httpRequest(params);
+    </script>
+</body>
+
+</html>

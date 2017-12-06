@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp跨域通信</title>
+</head>
+<script type="text/javascript" src="../../utils/util.js"></script>
+
+<body>
+    <script type="text/javascript">
+    var url = "http://localhost:3000/api/jsonp"
+    util.jsonp(url, successHandler, errorHandler);
+
+    function successHandler(res) {
+        console.log(res)
+    }
+
+    function errorHandler(error) {
+        console.log(error)
+    }
+    </script>
+</body>
+
+</html>
