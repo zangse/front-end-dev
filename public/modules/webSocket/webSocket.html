@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>webSocket</title>
+    <script src="../../utils/util.js"></script>
+</head>
+
+<body>
+    <div id="send">发送</div>
+    <script>
+    var url = "ws://localhost:8080/"
+    var ws = new WebSocket(url, 'echo-protocol');
+
+    ws.onopen = function(evt) {
+        console.log("Connection open ...");
+        ws.send("Hello WebSockets!");
+    };
+
+    ws.onmessage = function(evt) {
+        console.log("Received Message: " + evt.data);
+        // ws.close();
+    };
+
+    ws.onclose = function(evt) {
+        console.log("Connection closed.");
+    };
+    var dom = document.getElementById('send');
+    dom.addEventListener('click', function(e) {
+        e.preventDefault();
+        ws.send("Hello ssss!");
+    }, false)
+    </script>
+</body>
+
+</html>
